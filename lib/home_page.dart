@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login/order_page.dart';
  
  class HomePage extends StatefulWidget {
    const HomePage({super.key});
@@ -14,11 +15,20 @@ import 'package:flutter/material.dart';
        appBar: AppBar(title: Text('Home Page')),
        body: Center(
          child: Column(
-           spacing: 8,
-           mainAxisAlignment: MainAxisAlignment.center,
-           children: [
-             Text('Selamat Datang di Home Page!'),
-           ],
+          // Catatan: `spacing` bukan properti bawaan Column, kemungkinan maksudnya SizedBox
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Selamat datang di Home Page!'),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const OrderPage()),
+                );
+              },
+              child: Text('Order Now'),
+            ),
+          ],
          ),
        ),
      );
