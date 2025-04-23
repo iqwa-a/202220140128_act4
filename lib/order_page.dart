@@ -51,6 +51,26 @@ import 'package:flutter/material.dart';
                  return null;
                },
              ),
+             TextFormField(
+               controller: jumlahMakananController,
+               decoration: const InputDecoration(labelText: 'Food QTY Order'),
+               validator: (value) {
+                 if (value == null || value.isEmpty) {
+                   return 'Please enter your qty of food order';
+                 }
+                 return null;
+               },
+             ),
+             TextFormField(
+               controller: jumlahMinumanController,
+               decoration: const InputDecoration(labelText: 'Drink QTY Order'),
+               validator: (value) {
+                 if (value == null || value.isEmpty) {
+                   return 'Please enter your qty drink order';
+                 }
+                 return null;
+               },
+             ),
            ],
          ),
        ),
